@@ -439,5 +439,25 @@ Total Size: {8:n0}",
         {
             return _docStore.SideBySideExecuteIndexAsync(indexCreationTask, minimumEtagBeforeReplace, replaceTimeUtc);
         }
+
+        public void SideBySideExecuteIndexes(List<AbstractIndexCreationTask> indexCreationTasks, Etag minimumEtagBeforeReplace = null, DateTime? replaceTimeUtc = default(DateTime?))
+        {
+            _docStore.SideBySideExecuteIndexes(indexCreationTasks, minimumEtagBeforeReplace, replaceTimeUtc);
+        }
+
+        public Task SideBySideExecuteIndexesAsync(List<AbstractIndexCreationTask> indexCreationTasks, Etag minimumEtagBeforeReplace = null, DateTime? replaceTimeUtc = default(DateTime?))
+        {
+            return _docStore.SideBySideExecuteIndexesAsync(indexCreationTasks, minimumEtagBeforeReplace, replaceTimeUtc);
+        }
+
+        public void ExecuteIndexes(List<AbstractIndexCreationTask> indexCreationTasks)
+        {
+            _docStore.ExecuteIndexes(indexCreationTasks);
+        }
+
+        public Task ExecuteIndexesAsync(List<AbstractIndexCreationTask> indexCreationTasks)
+        {
+            return _docStore.ExecuteIndexesAsync(indexCreationTasks);
+        }
     }
 }
